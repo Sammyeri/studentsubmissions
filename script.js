@@ -80,20 +80,15 @@ function createRange(start, end){
 }
 
 function countElements(array){
-    let numA = 0;
-    let numB = 0;
-    let numC = 0;
-    for(let i =0; i<array.length; i++){
-        if(array[i] === "a"){
-            numA = numA + 1;
-        } else if (array[i] === "b"){
-            numB = numB + 1;
-        } else {
-            numC = numC +1;
+    let totals = {};
+    for(const item of array){
+        if(totals[item]){
+            totals[item] += 1;
+        }else{
+            totals[item] = 1;
         }
     }
-    array1 = [{a: numA}, {b: numB}, {c: numC}];
-    console.log(array1);
+    console.log(totals);
 }
 
 //testing grounds
